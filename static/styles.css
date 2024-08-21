@@ -132,3 +132,32 @@ footer {
     transform: scale(1.1); /* Увеличение изображения товара */
 }
 
+/* Стили для формы поиска */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor

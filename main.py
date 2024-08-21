@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask import send_from_directory
+from flask import request
 
 app = Flask(__name__)
 
@@ -70,6 +70,39 @@ def product_detail(product_id):
         return render_template('product_detail.html', product=product)
     else:
         return "<h1>Товар не найден</h1>", 404
+
+
+@app.route('/search', methods=['GET'])
+def search():
+    query = request.args.get('q', '').lower()
+    products = [
+        {
+            "id": 1,
+            "name": "Товар 1",
+            "description": "Описание товара 1",
+            "price": "1000 руб.",
+            "image": "product1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Товар 2",
+            "description": "Описание товара 2",
+            "price": "1200 руб.",
+            "image": "product2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Товар 3",
+            "description": "Описание товара 3",
+            "price": "1500 руб.",
+            "image": "product3.jpg"
+        }
+    ]
+
+    filtered_products = [product for product in products if
+                         query in product['name'].lower() or query in product['description'].lower()]
+
+    return render_template('index.html', products=filtered_products)
 
 
 app.run(port=80, debug=True)
