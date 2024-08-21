@@ -70,3 +70,34 @@ a:hover {
 .details {
     margin-bottom: 20px;
 }
+
+
+/* кнопка подробнее */
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Дополнительная информация с плавным раскрытием */
+.details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.details.show {
+    max-height: 500px; /* Установите подходящую максимальную высоту */
+    opacity: 1;
+}

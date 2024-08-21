@@ -9,13 +9,37 @@
 <body>
     <div class="container">
         <h1>{{ product['name'] }}</h1>
-        <img src="{{ url_for('static', filename=product['image']) }}" >
+        <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
         <p>{{ product['description'] }}</p>
         <p class="price">{{ product['price'] }}</p>
-        <div class="details">
+
+        <!-- Кнопка для отображения/скрытия подробностей -->
+        <button id="details-button" onclick="toggleDetails()">Подробнее</button>
+
+        <!-- Скрытый блок с подробной информацией -->
+        <div id="product-details" class="details">
             <p>{{ product['details'] }}</p>
         </div>
+
         <a href="{{ url_for('index') }}">Назад к каталогу</a>
     </div>
+
+
+<!-- скрипт для кнопки -->
+    <script>
+        function toggleDetails() {
+            var details = document.getElementById('product-details');
+            var button = document.getElementById('details-button');
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+                button.textContent = 'Подробнее';
+            } else {
+                details.classList.add('show');
+                button.textContent = 'Скрыть';
+            }
+        }
+    </script>
+
+
 </body>
 </html>
