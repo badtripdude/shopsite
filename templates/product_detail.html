@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product['name'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ product['name'] }}</h1>
+        <img src="{{ url_for('static', filename=product['image']) }}" >
+        <p>{{ product['description'] }}</p>
+        <p class="price">{{ product['price'] }}</p>
+        <div class="details">
+            <p>{{ product['details'] }}</p>
+        </div>
+        <a href="{{ url_for('index') }}">Назад к каталогу</a>
+    </div>
+</body>
+</html>

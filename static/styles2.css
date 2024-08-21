@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Заголовок страницы */
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Стили для изображения товара */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Описание товара */
+p {
+    font-size: 1.2em;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* Цена товара */
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 20px 0;
+}
+
+/* Кнопка возврата к каталогу */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
+
+/* Контейнер для всей информации */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Отступ снизу для описания и цены */
+.details {
+    margin-bottom: 20px;
+}
