@@ -26,7 +26,6 @@
             <a href="{{ url_for('product_detail', product_id=product['id']) }}">
                 <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
                 <h3>{{ product['name'] }}</h3>
-                <p>{{ product['description'] }}</p>
                 <p class="price">{{ product['price'] }}</p>
             </a>
         </div>
