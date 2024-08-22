@@ -1,36 +1,54 @@
 body {
-
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333333;
 }
 
+/* Стиль для заголовка с названием магазина */
 header {
-    background: #555;
-    color: #fff;
-    padding: 10px 0;
+    background: #2c3e50; /* Темно-синий фон */
+    color: #ffffff; /* Белый цвет текста заголовка */
+    padding: 20px 0;
     text-align: center;
+    font-size: 2em;
 }
 
 header h1 {
     margin: 0;
 }
 
+/* Стиль для навигационного меню */
+nav {
+    background: #fff; /* Белый фон для меню */
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 3px solid #2c3e50; /* Нижняя граница синего цвета */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #2c3e50;
     text-decoration: none;
+    font-weight: bold;
 }
+
+nav ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
 
 section {
     padding: 20px;
