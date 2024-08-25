@@ -1,103 +1,210 @@
-/* styles.css */
-
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+header {
+    background: #2c3e50; /* Темно-синий фон */
+    color: #ffffff; /* Белый цвет текста заголовка */
+    padding: 20px 0;
     text-align: center;
+    font-size: 1em;
 }
 
-/* Заголовок страницы */
-h1 {
-    font-size: 2.5em;
-    margin-top: 20px;
-    color: #444;
+header h1 {
+    margin: 0;
 }
 
-/* Стили для изображения товара */
-img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-/* Описание товара */
-p {
-    font-size: 1.2em;
-    margin: 20px;
-    line-height: 1.6;
-}
-
-/* Цена товара */
-.price {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #e74c3c;
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0;
 }
 
-/* Кнопка возврата к каталогу */
-a {
-    display: inline-block;
-    margin-top: 30px;
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.search-button {
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #555;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor
 }
+/* Стиль для навигационного меню */
 
-a:hover {
-    background-color: #2980b9;
-}
-
-/* Контейнер для всей информации */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+section {
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin: 10px;
 }
 
-/* Отступ снизу для описания и цены */
-.details {
+.container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Стили для блока отображения товара */
+.product-display {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Стили для галереи изображений */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    max-width: 600px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #007BFF;
+}
+
+/* Стили для информации о товаре */
+.product-info {
+    max-width: 400px;
+}
+
+/* Стили для заголовка товара */
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Стили для описания товара */
+.product-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Стили для цены */
+.price {
+    font-size: 60px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Стили для размерной сетки */
+.size-chart {
     margin-bottom: 20px;
 }
 
+.size-chart h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
-/* кнопка подробнее */
-button {
-    background-color: #333;
-    color: #fff;
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-option {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 20px;
     padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.size-option:hover,
+.size-option.selected {
+    border-color: black;
+    background-color: #f0f0f0;
+}
+
+/* Стили для кнопок добавления к заказу */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-to-cart,
+.quick-order {
+    flex: 1;
+    padding: 15px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #555;
+.add-to-cart {
+    background-color: #002f3d;
+    color: white;
 }
 
-/* Дополнительная информация с плавным раскрытием */
-.details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
+.quick-order {
+    background-color: #00c8ff;
+    color: white;
 }
 
-.details.show {
-    max-height: 500px; /* Установите подходящую максимальную высоту */
-    opacity: 1;
+.add-to-cart:hover {
+    background-color: #001f29;
+}
+
+.quick-order:hover {
+    background-color: #0099cc;
+}
+
+/* Стили для ссылки возврата к каталогу */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #000000; /* Синий фон */
+    color: white; /* Белый текст */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход при наведении */
+}
+
+a:hover {
+    background-color: #0056b3; /* Более темный синий цвет при наведении */
+    transform: translateY(-2px); /* Легкий подъем кнопки при наведении */
 }

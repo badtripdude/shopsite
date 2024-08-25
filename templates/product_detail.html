@@ -7,26 +7,54 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
 </head>
 <body>
+    <header>
+        <h1>Rshop</h1>
+        <!-- Форма поиска -->
+        <form action="/search" method="get" class="search-form">
+            <input type="text" name="q" placeholder="Поиск товаров..." class="search-input">
+            <button type="submit" class="search-button">Искать</button>
+        </form>
+    </header>
     <div class="container">
-        <h1>{{ product['name'] }}</h1>
-        <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
-        <p>{{ product['description'] }}</p>
-        <p class="price">{{ product['price'] }}</p>
+        <div class="product-display">
+            <div class="image-gallery">
+                <img id="main-image" src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}" class="main-image">
+                <div class="thumbnail-gallery">
+                    {% for thumbnail in product['thumbnails'] %}
+                        <img src="{{ url_for('static', filename=thumbnail) }}" alt="{{ product['name'] }}" class="thumbnail" onclick="changeImage('{{ url_for('static', filename=thumbnail) }}')">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>{{ product['name'] }}</h1>
+                <p>{{ product['description'] }}</p>
+                <p class="price">{{ product['price'] }}</p>
 
-        <!-- Кнопка для отображения/скрытия подробностей -->
-        <button id="details-button" onclick="toggleDetails()">Подробнее</button>
+                <!-- Размерная сетка -->
+                <div class="size-chart">
+                    <h3>Выберите размер:</h3>
+                    <div class="sizes">
+                        {% for size in product['sizes'] %}
+                            <button class="size-option">{{ size }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
 
-        <!-- Скрытый блок с подробной информацией -->
-        <div id="product-details" class="details">
-            <p>{{ product['details'] }}</p>
+                <!-- Кнопки добавления в заказ -->
+                <div class="actions">
+                    <button class="add-to-cart">Добавить к заказу</button>
+                    <button class="quick-order">Быстрый заказ</button>
+                </div>
+            </div>
         </div>
-
         <a href="{{ url_for('index') }}">Назад к каталогу</a>
     </div>
 
-
-<!-- скрипт для кнопки -->
     <script>
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
         function toggleDetails() {
             var details = document.getElementById('product-details');
             var button = document.getElementById('details-button');
@@ -39,7 +67,5 @@
             }
         }
     </script>
-
-
 </body>
 </html>
